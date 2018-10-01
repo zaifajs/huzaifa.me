@@ -1,5 +1,6 @@
 # Build / Public / Dist
 public
+.DS_Store
 
 # Logs
 logs
