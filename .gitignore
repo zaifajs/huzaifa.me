@@ -1,7 +1,8 @@
-# Build / Public / Dist
+# customized
 public
 .DS_Store
 package-lock.json
+src/img
 
 # Logs
 logs
