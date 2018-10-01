@@ -1,0 +1,105 @@
+/* ==================================== HEADER */
+
+nav {
+  padding: 0 calc((100% / 14) * 1);
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  justify-content: space-between;
+  z-index: 9999;
+}
+
+nav.Sticky .Header__HamburgerIcon {
+  position: fixed;
+  right: 7%;
+}
+
+/* Hamburger  */
+.Header__HamburgerIcon {
+  position: inherit;
+  transition: .5s;
+  right: 7%;
+  cursor: pointer;
+  width: 30px;
+  height: 22px;
+  z-index: 999;
+}
+
+.Header__HamburgerIcon:hover span {
+  -webkit-transform: rotate(180deg);
+  /* Safari */
+  transform: rotate(180deg);
+}
+
+.Header__HamburgerIcon span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: $color-secondary;
+  position: absolute;
+  transition: width 0.2s, height 0.2s, transform 0.4s;
+}
+
+.Header__HamburgerIcon span:nth-child(2) {
+  width: 80%;
+  top: 9px;
+  animation: slidein 0.3s ease-in alternate-reverse 4;
+}
+
+
+.Header__HamburgerIcon span:nth-child(3) {
+  top: 18px;
+}
+
+/* Close Action */
+.Header__HamburgerIcon.flip span:nth-child(1) {
+  transform: rotate(130deg);
+  top: 10px;
+  background: $color-light;
+}
+
+.Header__HamburgerIcon.flip span:nth-child(2) {
+  display: none;
+}
+
+.Header__HamburgerIcon.flip span:nth-child(3) {
+  top: 10px;
+  background: $color-light;
+  transform: rotate(-130deg);
+}
+
+.Header__HamburgerMenu {
+  display: flex;
+  content: "";
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  background-color: $color-primary;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  transform: scaleX(0);
+  transition: transform 0.4s ease-in-out;
+  transform-origin: right;
+}
+
+.Header__HamburgerMenu.opener {
+  transform: scaleX(1);
+}
+
+.Header__HamburgerMenu ul {
+  list-style: none;
+  margin: 3em 0;
+}
+
+.Header__HamburgerMenu ul li a {
+  padding: 1rem;
+  font-family: "Gilroy", sans-serif;
+  color: $color-white;
+  font-size: 2rem;
+}

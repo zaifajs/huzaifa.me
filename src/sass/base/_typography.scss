@@ -1,0 +1,80 @@
+/* ====================================
+TYPOGRAPHY  */
+@import url("https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css");
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-ExtraBold.woff2") format("woff2"), url("../fonts/Gilroy-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 800;
+  margin: 0.5em 0;
+}
+
+a {
+  outline: 0 solid;
+  text-decoration: none;
+  color: $color-secondary;
+
+  &:hover,
+  &:focus {
+    outline: 0 solid;
+    text-decoration: none;
+    color: $color-secondary;
+  }
+}
+
+h1 {
+  font-size: 5.2rem;
+  line-height: 7.2rem;
+}
+
+h2 {
+  font-size: 3.6rem;
+  line-height: 5.2rem;
+}
+
+h3 {
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
+
+p,
+footer a,
+:link {
+  font-size: 1.8rem;
+  transition: all 0.2s;
+}
+
+.TextColor--Primary {
+  color: $color-primary;
+}
+
+.Link--Special {
+  display: block;
+  text-decoration: underline;
+  font-size: inherit;
+  transition: all 0.2s;
+} 
+
+.Link--Special:hover,
+.Link--Special:focus,
+.Link--Special:active {
+  text-decoration: underline;
+  color: darken($color-text, 60%);
+}

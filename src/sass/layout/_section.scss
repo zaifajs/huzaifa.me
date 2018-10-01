@@ -1,0 +1,358 @@
+/* Common utilities for Sections */
+.SectionTitle {
+  padding: 8rem 0 3rem;
+}
+.SectionContent {
+  padding: 3rem 0 3rem;
+}
+
+/* Divider Padding */
+.Divider--Big,
+.Divider--Small {
+  padding-bottom: 12px;
+}
+
+
+
+/* ==================================== HERO */
+.Hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 calc((100% / 14) * 1);
+  min-height: 90vh;
+  top: 8vh;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.Hero>.HeroRight {
+  text-align: center;
+}
+
+.HeroLeft h2>span {
+  color: $color-primary;
+}
+
+.greetings span {
+  font-size: 1.8rem;
+  font-style: italic;
+}
+
+/* ==================================== WORK */
+.Work {
+  margin: 0 calc((100% / 14) * 1);
+}
+
+.WorkSingle {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.Work .SectionContent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Work .SectionContent>div:nth-of-type(odd) {
+  margin-left: auto;
+  position: relative;
+}
+
+.WorkThumb {
+  max-width: 48.3rem;
+  position: relative;
+}
+
+.WorkMeta {
+  position: relative;
+  padding: 1.4rem 2.5rem;
+  max-width: 380px;
+}
+
+.WorkMeta h3 {
+  margin: 5px 0;
+}
+
+.WorkMeta:after {
+  content: "";
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 2rem;
+  position: absolute;
+  height: 100%;
+  background: #f7f7ff;
+  transform: matrix(1, -0.1, 0, 1, 0, 0);
+  z-index: -2;
+}
+
+.WorkMeta--Details {
+  font-size: 16px;
+  font-style: italic;
+  line-height: 2.4rem;
+}
+
+.WorkMeta .btn--StrokesBorder {
+  float: right;
+}
+
+.Work .SectionContent>div:first-child {
+  padding-top: 0;
+}
+
+.Work .SectionContent>div {
+  padding: 5rem 0;
+}
+
+.Work .SectionContent>div:last-child {
+  padding-bottom: 0;
+}
+
+.Work .SectionContent>div:last-child {
+  padding-bottom: 0;
+}
+
+/* ==================================== WORK */
+.Upwork {
+  margin: 0 calc((100% / 14) * 1);
+  display: flex;
+  padding: 15rem 0 5rem;
+}
+
+.Upwork__Left,
+.Upwork__Right {
+  flex: 1 1 auto;
+  text-align: center;
+  margin: 5px;
+  /* and that, will result in a 10px gap */
+}
+
+.Upwork__screenshot {
+  border: 4px solid #F7F7FF;
+}
+
+.Upwork__Right img {
+  display: flex;
+  margin: 0 auto;
+}
+
+.upwork__details {
+  max-width: 80%;
+  margin: 5rem auto;
+}
+
+.upwork-logo {
+  padding: 2rem 0 0;
+  max-width: 130px;
+}
+
+/* ==================================== FEEDBACK */
+.Feedback {
+  margin: 0 calc((100% / 14) * 1);
+}
+
+.FeebackSingle {
+  max-width: 60rem;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 2rem 0;
+  margin: 3rem 0;
+}
+
+.FeebackSingle:nth-of-type(even) {
+  margin-left: auto;
+}
+
+.FeedbackText {
+  flex: 1;
+}
+
+.ClientAvatar {
+  min-width: 12.5rem;
+  position: relative;
+}
+
+/*
+.ClientAvatar::after {
+  right: -2px;
+  top: 0;
+  min-width: 12.5rem;
+  min-height: 12.5rem;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  background: $color-primary;
+  z-index: -1;
+}
+*/
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+.rating>span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  color: $color-tertiary;
+  font-size: 20px;
+}
+
+.rating>span:hover:before,
+.rating>span:hover~span:before {
+  content: "\2605";
+  position: absolute;
+}
+
+.FeedbackText p {
+  background: $color-light;
+  padding: 1.4rem 1.4rem 1.4rem 3.5rem;
+  margin-top: 1rem;
+  transition: all 0.3s;
+}
+
+.FeedbackText:hover p {
+  opacity: 1;
+}
+
+.FeedbackText .Feedback--Name {
+  background: $color-white;
+  font-family: "Gilroy", sans-serif;
+  color: $color-primary;
+  padding-top: 0.5rem;
+  margin: 0;
+}
+
+.FeebackSingle:nth-of-type(odd) .FeedbackText p {
+  left: -2rem;
+  position: relative;
+  z-index: -2;
+}
+
+.FeebackSingle:nth-of-type(even) .ClientAvatar {
+  right: -2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.Stars {
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  margin-left: 12px;
+  display: none;
+}
+
+.FeebackSingle:nth-of-type(even) .Stars {
+  margin-left: 30px;
+}
+
+/* Dribbble */
+.Dribbble {
+  margin: 0 calc((100% / 14) * 1);
+}
+
+.Dribbble .SectionContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Dribbble .SectionContent>div {
+  width: 265px;
+}
+
+.Dribbble .SectionContent>div img {
+  object-fit: cover;
+}
+
+/* ==================================== QUOTES */
+.Quotes {
+  margin: 0 calc((100% / 14) * 1);
+  padding: 4rem 0 0;
+}
+
+.Quotes blockquote {
+  background-color: $color-primary;
+  padding: 8% 10% 4%;
+  font-family: "Gilroy", sans-serif;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  color: $color-light;
+  text-align: center;
+  position: relative;
+}
+
+.Quotes blockquote:before {
+  content: open-quote;
+  font-size: 12rem;
+  opacity: 0.2;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  top: auto;
+}
+
+span.Author {
+  display: block;
+  padding: 2.8rem 0 0;
+  font-size: 1.8rem;
+  font-family: "Lora", serif;
+  font-style: italic;
+}
+
+/* ==================================== FOOTER */
+footer {
+  margin: 0 calc((100% / 14) * 1);
+  padding: 10rem 0 3rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+footer a {
+  font-family: "Gilroy", sans-serif;
+  transition: all 0.5s;
+}
+
+footer a:hover {
+  color: $color-primary;
+}
+
+footer h4 {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-family: "Lora", serif;
+  line-height: 2.5rem;
+  margin: 0;
+  font-weight: normal;
+}
+
+footer div {
+  padding: 2rem 0;
+}
+
+.SocialLinks ul {
+  list-style: none;
+  display: inline-block;
+}
+
+.SocialLinks ul li {
+  display: inline-block;
+  font-family: "Gilroy", Sans-serif;
+}
+
+.SocialLinks {
+  min-width: 29rem;
+}
+
+.SocialLinks ul li:nth-of-type(even) {
+  margin: 0 0.5rem;
+  font-size: 3.2rem;
+}

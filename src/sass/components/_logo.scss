@@ -1,0 +1,57 @@
+.Header__Logo {
+  span {
+    display: inline;
+    font-family: "Gilroy", sans-serif;
+    font-size: 3.6rem;
+    color: $color-primary;
+    line-height: 5.2rem;
+    transition: all 0.7s;
+
+    &:hover {
+      color: $color-secondary;
+    }
+
+    &:nth-child(2) {
+      left: -1.5rem;
+      position: relative;
+      color: $color-secondary;
+      text-shadow: 3px 1px #08080f14;
+    }
+
+    &:after {
+      max-width: 0px;
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: top;
+      transition: .2s linear;
+      letter-spacing: -.3rem;
+    }
+
+    &:nth-child(3) {
+      left: -3rem;
+      position: relative;
+    }
+
+    &:nth-child(1):after {
+      content: "uzaifa";
+      left: -.3rem;
+      position: relative;
+    }
+
+    &:hover:nth-child(1):after {
+      max-width: 15rem;
+      color: $color-secondary;
+    }
+
+    &:nth-child(3):after {
+      content: "hmed";
+      left: -.3rem;
+      position: relative;
+    }
+
+    &:hover:nth-child(3):after {
+      max-width: 15rem;
+      color: $color-secondary;
+    }
+  }
+}

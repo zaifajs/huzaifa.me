@@ -1,0 +1,64 @@
+
+/* ====================================
+BASE  */
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+
+  &::before, 
+  &::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Lora", serif;
+  font-weight: 400;
+  color: $color-text;
+  line-height: 2.8rem;
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+  outline: 0 solid;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Visuable Gird Columns */
+.VisuableGrids {
+  padding: 0 calc((100% / 14) * 1);
+  display: flex;
+  position: absolute;
+  width: 100%;
+  justify-content: center;
+  height: 100%;
+  z-index: -2;
+
+  div {
+    height: 100%;
+    flex: 1;
+    border-right: 1px solid $color-light;
+    border-left: 1px solid $color-light;
+  }
+}
+
+/* Container with defined max-width */
+.Container {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
