@@ -1,6 +1,6 @@
 # customized
 public
-.DS_Store
+*.DS_Store
 package-lock.json
 src/img
 

@@ -28,7 +28,7 @@
         </div>
 
         <!-- Header -->
-        <nav class="Header" id="home" data-aos="fade">
+        <nav class="Header" id="home">
             <div class="Header__Logo">
                 <a href="javascript:void(0)">
                     <span>h</span>
@@ -62,7 +62,7 @@
 
         <section class="Hero">
             <!-- Hero Text -->
-            <div class="Hero__HeroLeft" data-aos="fade-up">
+            <div class="Hero__HeroLeft">
                 <!-- Greetings -->
                 <div class="greetings">
                     <span class="tooltipClass" tooltip="Peace be upon you!">As-salāmu alaykum! </span>
@@ -77,7 +77,7 @@
                 </a>
             </div>
             <!-- Hero Headshoot -->
-            <div class="Hero__HeroRight" data-aos="fade-up">
+            <div class="Hero__HeroRight">
                 <img class="Headshot" src="img/huzaifa.png" width="400" />
             </div>
 
@@ -92,7 +92,7 @@
             </div>
             <div class="SectionContent">
                 <!-- Work Item Single-->
-                <div class="WorkSingle" data-aos="fade-up">
+                <div class="WorkSingle">
 
                     <div class="WorkMeta">
                         <img class="Divider--Small" src="img/divider-small.svg" alt="">
@@ -111,7 +111,7 @@
                     </div>
                 </div>
                 <!-- Work Item Single-->
-                <div class="WorkSingle" data-aos="fade-up">
+                <div class="WorkSingle">
                     <div class="WorkThumb">
                         <img src="img/mydxlife.jpg" alt="">
                     </div>
@@ -133,10 +133,10 @@
         </section>
 
         <section class="Upwork">
-            <div class="Upwork__Left" data-aos="fade-up">
+            <div class="Upwork__Left">
                 <img class="Upwork__screenshot" src="img/upwork.jpg" alt="">
             </div>
-            <div class="Upwork__Right" data-aos="fade-up">
+            <div class="Upwork__Right">
                     <img class="Divider--Big" src="img/divider-big.svg" alt="">
                     <img class="upwork-logo" src="img/upwork-logo.svg" alt="">
                     <p class="upwork__details">
@@ -227,7 +227,7 @@
         </section>
 
         <!-- Instagram/Dribble Shots -->
-        <section class="Dribbble" data-aos="fade-up">
+        <section class="Dribbble">
             <div class="SectionTitle">
                 <img class="Divider--Big" src="img/divider-big.svg" alt="">
                 <h2>InstaFeed </h2>
@@ -241,7 +241,7 @@
         </section>
 
         <!-- Quotes -->
-        <section class="Quotes" data-aos="fade-up">
+        <section class="Quotes">
             <div class="SectionContent">
                 <div class="QuoteBox">
                     <blockquote>
@@ -253,7 +253,7 @@
         </section>
 
         <!-- Footer -->
-        <footer id="footer" data-aos="fade-up">
+        <footer id="footer">
             <div class="GetTouch">
                 <h4>Get in Touch</h4>
                 <a href="mailto:hi@huzaifa.me">hi@huzaifa.me</a>
@@ -282,10 +282,16 @@
             </div>
         </footer>
         </div>
+        <!-- Load the CDN first -->
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        <!-- If CDN fails to load, serve up the local version -->
+        <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.js"><\/script>');</script>
+        
         <script src="js/main.js"></script>
-        <script>
-            AOS.init();
-        </script>
+        
 </body>
 
 </html>
