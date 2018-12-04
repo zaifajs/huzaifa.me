@@ -1,4 +1,3 @@
-
 /* ====================================
 BASE  */
 * {
@@ -7,7 +6,7 @@ BASE  */
   outline: none;
   box-sizing: border-box;
 
-  &::before, 
+  &::before,
   &::after {
     margin: 0;
     padding: 0;
@@ -15,8 +14,26 @@ BASE  */
   }
 }
 
+
 html {
-  font-size: 10px;
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+  @include max-screen($medium) {
+    // width < 1200?
+    font-size: 56.25%;
+  }
+
+  @include max-screen($small) {
+    // width < 900?
+    font-size: 50%;
+  }
+
+
+  @include min-screen($large) {
+    // width > 1800?
+    font-size: 75%;
+  }
 }
 
 body {

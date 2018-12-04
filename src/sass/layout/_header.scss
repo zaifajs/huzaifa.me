@@ -1,6 +1,6 @@
 /* ==================================== HEADER */
 
-nav {
+.Header {
   padding: 0 calc((100% / 14) * 1);
   min-height: 20vh;
   display: flex;
@@ -9,97 +9,117 @@ nav {
   width: 100%;
   justify-content: space-between;
   z-index: 9999;
+
+  &__Logo {
+    position: absolute;
+  }
+
+  &__HamburgerIcon {
+
+    position: absolute;
+    transition: .5s;
+    right: 7.2%;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    z-index: 999;
+
+    span {
+      display: block;
+      height: 4px;
+      width: 100%;
+      background: $color-secondary;
+      position: absolute;
+      transition: width 0.2s, height 0.2s, transform 0.4s;
+
+      &:nth-child(2) {
+        width: 80%;
+        top: 9px;
+        animation: slidein 0.3s ease-in alternate-reverse 4;
+      }
+
+      &:nth-child(3) {
+        top: 18px;
+      }
+    }
+
+    &:hover span {
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+
+    &.flip {
+      span {
+        &:nth-child(1) {
+          transform: rotate(130deg);
+          top: 10px;
+          background: $color-primary;
+        }
+
+        &:nth-child(2) {
+          display: none;
+        }
+
+        &:nth-child(3) {
+          top: 10px;
+          background: $color-primary;
+          transform: rotate(-130deg);
+        }
+      }
+    }
+  }
 }
 
 nav.Sticky .Header__HamburgerIcon {
   position: fixed;
-  right: 7%;
+  right: 7.2%;
 }
 
-/* Hamburger  */
-.Header__HamburgerIcon {
-  position: inherit;
-  transition: .5s;
-  right: 7%;
-  cursor: pointer;
-  width: 30px;
-  height: 22px;
-  z-index: 999;
-}
-
-.Header__HamburgerIcon:hover span {
-  -webkit-transform: rotate(180deg);
-  /* Safari */
-  transform: rotate(180deg);
-}
-
-.Header__HamburgerIcon span {
-  display: block;
-  height: 4px;
-  width: 100%;
-  background: $color-secondary;
-  position: absolute;
-  transition: width 0.2s, height 0.2s, transform 0.4s;
-}
-
-.Header__HamburgerIcon span:nth-child(2) {
-  width: 80%;
-  top: 9px;
-  animation: slidein 0.3s ease-in alternate-reverse 4;
-}
-
-
-.Header__HamburgerIcon span:nth-child(3) {
-  top: 18px;
-}
-
-/* Close Action */
-.Header__HamburgerIcon.flip span:nth-child(1) {
-  transform: rotate(130deg);
-  top: 10px;
-  background: $color-light;
-}
-
-.Header__HamburgerIcon.flip span:nth-child(2) {
-  display: none;
-}
-
-.Header__HamburgerIcon.flip span:nth-child(3) {
-  top: 10px;
-  background: $color-light;
-  transform: rotate(-130deg);
-}
 
 .Header__HamburgerMenu {
   display: flex;
-  content: "";
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
   align-items: center;
-  width: 20vw;
-  background-color: $color-primary;
+  //background-color: $color-light;
   position: fixed;
   right: 0;
-  top: 0;
-  height: 100vh;
-  transform: scaleX(0);
-  transition: transform 0.4s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(70%);
+  transition: all 0.4s ease-in-out;
   transform-origin: right;
-}
+  justify-content: flex-end;
+  padding-right: 10%;
+  top: auto;
 
-.Header__HamburgerMenu.opener {
-  transform: scaleX(1);
-}
+  &.opener {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0%);
 
-.Header__HamburgerMenu ul {
-  list-style: none;
-  margin: 3em 0;
-}
+    @include max-screen($xsmall) {
+      transform: translateX(-10%);
+    }
+  }
 
-.Header__HamburgerMenu ul li a {
-  padding: 1rem;
-  font-family: "Gilroy", sans-serif;
-  color: $color-white;
-  font-size: 2rem;
+  ul {
+
+    margin: 1em 0;
+    line-height: normal;
+
+    li {
+      display: inline-block;
+
+      a {
+        padding: 1rem;
+        font-family: "Gilroy", sans-serif;
+        color: $color-primary;
+        font-size: 1.8rem;
+        transition: all .5s;
+
+        &:hover {
+          opacity: .8;
+        }
+      }
+    }
+  }
 }

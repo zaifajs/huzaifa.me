@@ -7,8 +7,9 @@
     line-height: 5.2rem;
     transition: all 0.7s;
 
+
     &:hover {
-      color: $color-secondary;
+      //color: $color-secondary;
     }
 
     &:nth-child(2) {
@@ -36,11 +37,12 @@
       content: "uzaifa";
       left: -.3rem;
       position: relative;
+      max-width: 15rem;
     }
 
     &:hover:nth-child(1):after {
       max-width: 15rem;
-      color: $color-secondary;
+      //color: $color-secondary;
     }
 
     &:nth-child(3):after {

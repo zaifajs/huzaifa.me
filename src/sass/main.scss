@@ -1,7 +1,8 @@
-
 /* ======
 CSS ARCHITECTURE: The 7-1 Pattern  */
- 
+
+@import "media-queries";
+
 @import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/variables";
@@ -12,10 +13,9 @@ CSS ARCHITECTURE: The 7-1 Pattern  */
 @import "base/utilities";
 
 @import "components/buttons";
-@import "components/logo"; 
+@import "components/logo";
 
 @import "layout/section";
 @import "layout/header";
 
 @import "pages/home";
-@import "responsive";

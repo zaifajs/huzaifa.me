@@ -3,6 +3,7 @@
   "version": "v1.0.0",
   "description": "Personal Portfolio plus Playground with new Stuff",
   "devDependencies": {
+    "browser-sync": "^2.26.3",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-fontmin": "^0.7.4",
