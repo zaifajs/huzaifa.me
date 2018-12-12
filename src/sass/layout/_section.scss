@@ -40,7 +40,7 @@ section {
   position: relative;
 
   @include max-screen($xsmall) {
-    min-height: auto;
+    padding-top: 10vh;
   }
 
   &>div {
@@ -90,6 +90,8 @@ section {
   padding: 5rem;
   margin-top: 5rem;
   margin-bottom: 3rem;
+  -webkit-clip-path: polygon(0 4%, 100% 0, 100% 91%, 0% 100%);
+  clip-path: polygon(0 4%, 100% 0, 100% 91%, 0% 100%);
 
   @include max-screen($xsmall) {
     padding: 3rem;
@@ -192,15 +194,15 @@ section {
         display: inline-block;
         text-transform: lowercase;
         font-size: 12px;
-        background: #00143c40;
+        color: $color-light;
         line-height: normal;
         padding: 3px 10px;
         margin-right: 3px;
-        color: #fff;
+        background: $color-primary;
         font-weight: 600;
         font-family: "Gilroy", sans-serif;
         border-radius: 10px;
-        cursor: pointer;
+
       }
     }
   }
@@ -410,5 +412,22 @@ footer {
         font-size: 3.2rem;
       }
     }
+  }
+}
+
+.StickyFooter {
+  margin: 0 calc((100% / 14) * 1);
+  background: $color-primary;
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+  width: -webkit-fill-available;
+  transform: translateY(10rem);
+  opacity: 0;
+  transition: all .4s;
+
+  &.Stuck {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

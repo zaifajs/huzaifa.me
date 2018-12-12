@@ -1,16 +1,18 @@
-const Header = document.querySelector('.Header')
+/* const $StickyFooter = document.querySelector('.StickyFooter')
+$Intro = document.querySelector('.Intro')
+IntroHeight = $Intro.offsetHeight;
 
-const headerToggle = function () {
-  let pixels = window.pageYOffset;
-  if (pixels > 0) {
-    Header.classList.add('Sticky')
+const StuckFooter = function () {
+  let WindowYOffset = window.pageYOffset;
+  if (WindowYOffset >= IntroHeight) {
+    $StickyFooter.classList.add('Stuck')
   } else {
-    Header.classList.remove('Sticky')
+    $StickyFooter.classList.remove('Stuck')
   }
-}
+} */
 
 document.addEventListener("scroll", function () {
-  headerToggle()
+  //StuckFooter();
 })
 
 // Hamburger Menu

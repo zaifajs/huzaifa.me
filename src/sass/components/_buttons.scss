@@ -7,69 +7,7 @@
 
 
   &--Link {
-    text-transform: uppercase;
-    font-family: "Gilroy", sans-serif;
-    color: $color-primary;
-    font-size: 1.6rem;
-    position: relative;
-    z-index: 1;
-    transition: all 0.5s ease-out;
-
-    &:focus,
-    &:active {
-      color: $color-text;
-    }
-
-    &:after {
-      content: "";
-      width: 100%;
-      left: 0;
-      bottom: 0;
-      position: absolute;
-      height: 4px;
-      background: #fff;
-      z-index: -2;
-      opacity: .8;
-    }
-
-    &::before {
-      content: "";
-      width: 100%;
-      left: 0;
-      bottom: 0;
-      position: absolute;
-      height: 4px;
-      background: $color-primary;
-      z-index: -1;
-      transform-origin: left;
-      transition: all .5s;
-      animation: underlineAnimIn .5s forwards ease-out;
-    }
-
-    &:hover:before {
-      transition: all .5s;
-      animation: underlineAnimOut .5s forwards ease-out;
-
-      @keyframes underlineAnimIn {
-        from {
-          transform: scaleX(1)
-        }
-
-        to {
-          transform: scaleX(0)
-        }
-      }
-
-      @keyframes underlineAnimOut {
-        0% {
-          transform: scaleX(0)
-        }
-
-        100% {
-          transform: scaleX(1)
-        }
-      }
-    }
+    @include AnimatedLink;
   }
 
   >span {

@@ -16,7 +16,7 @@
 
   &__HamburgerIcon {
 
-    position: absolute;
+    position: fixed;
     transition: .5s;
     right: 7.2%;
     cursor: pointer;
@@ -88,8 +88,11 @@ nav.Sticky .Header__HamburgerIcon {
   transition: all 0.4s ease-in-out;
   transform-origin: right;
   justify-content: flex-end;
-  padding-right: 10%;
+  padding-right: 12%;
+  padding-left: 2rem;
   top: auto;
+  background: #ffffffd6;
+
 
   &.opener {
     opacity: 1;
@@ -97,7 +100,10 @@ nav.Sticky .Header__HamburgerIcon {
     transform: translateX(0%);
 
     @include max-screen($xsmall) {
-      transform: translateX(-10%);
+      background: #F7F7FF;
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -108,16 +114,28 @@ nav.Sticky .Header__HamburgerIcon {
 
     li {
       display: inline-block;
+      padding: 0 .8rem;
 
       a {
-        padding: 1rem;
+        @include AnimatedLink;
+        padding-right: .2rem;
+        padding-left: .2rem;
+        //padding-bottom: .4rem;
         font-family: "Gilroy", sans-serif;
         color: $color-primary;
-        font-size: 1.8rem;
+        //font-size: 1.8rem;
+        //text-transform: lowercase;
         transition: all .5s;
 
+
+
+        @include max-screen($xsmall) {
+          font-size: 1.6rem;
+          padding-right: 0.5rem;
+        }
+
         &:hover {
-          opacity: .8;
+          color: $color-secondary;
         }
       }
     }
