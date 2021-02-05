@@ -150,6 +150,10 @@ section {
     align-items: center;
     flex-wrap: nowrap;
 
+    &:nth-child(odd)  {
+      flex-direction: row-reverse;
+    }
+
     @include max-screen($xsmall) {
       flex-wrap: wrap;
       flex-direction: row;
@@ -157,6 +161,7 @@ section {
   }
 
   &__WorkMeta {
+
     @include max-screen($xsmall) {
       order: 2;
     }
