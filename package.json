@@ -9,10 +9,14 @@
     "gulp-fontmin": "^0.7.4",
     "gulp-imagemin": "^4.1.0",
     "gulp-sass": "^4.0.1",
-    "gulp-uglify-es": "^1.0.4"
+    "gulp-uglify-es": "^1.0.4",
+    "graceful-fs": "4.2.2"
   },
   "dependencies": {
     "aos": "^2.3.3",
     "gsap": "^2.0.2"
+  },
+  "scripts": {
+    "gulp": "gulp"
   }
 }

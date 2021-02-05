@@ -22,13 +22,13 @@ h6 {
 }
 
 a {
-  outline: 0 solid;
+  //outline: 0 solid;
   text-decoration: none;
   color: $color-secondary;
 
   &:hover,
   &:focus {
-    outline: 0 solid;
+    //outline: 0 solid;
     text-decoration: none;
     color: $color-secondary;
   }
@@ -70,7 +70,7 @@ footer a,
   text-decoration: underline;
   font-size: inherit;
   transition: all 0.2s;
-} 
+}
 
 .Link--Special:hover,
 .Link--Special:focus,

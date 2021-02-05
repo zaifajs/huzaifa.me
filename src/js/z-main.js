@@ -15,16 +15,27 @@ document.addEventListener("scroll", function () {
   //StuckFooter();
 })
 
+butter.init();
+
 // Hamburger Menu
 
-var ham = document.getElementsByClassName("Header__HamburgerIcon");
-var hmenu = document.getElementsByClassName("Header__HamburgerMenu");
+var ham = document.getElementsByClassName("Header__HamburgerIcon")[0];
+var hmenu = document.getElementsByClassName("Header__HamburgerMenu")[0];
 
-ham[0].addEventListener("click", function () {
+ham.addEventListener("click", function () {
   // make the icons flip
-  ham[0].classList.toggle("flip");
+  ham.classList.toggle("flip");
   // open menu items
-  hmenu[0].classList.toggle("opener");
+  hmenu.classList.toggle("opener");
+});
+
+ham.addEventListener("keypress", function (e) {
+  if(e.which == 13) {
+    // make the icons flip
+    ham.classList.toggle("flip");
+    // open menu items
+    hmenu.classList.toggle("opener");
+  }
 });
 
 // Select all links with hashes

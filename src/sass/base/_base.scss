@@ -3,7 +3,6 @@ BASE  */
 * {
   margin: 0;
   padding: 0;
-  outline: none;
   box-sizing: border-box;
 
   &::before,
@@ -46,7 +45,7 @@ body {
 input:focus,
 textarea:focus,
 button:focus {
-  outline: 0 solid;
+  //outline: 0 solid;
   text-decoration: none;
 }
 
