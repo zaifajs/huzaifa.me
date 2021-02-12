@@ -15,7 +15,14 @@ document.addEventListener("scroll", function () {
   //StuckFooter();
 })
 
-butter.init();
+// set options when initializing butter.js
+var options = {
+  wrapperId: 'butter',
+  wrapperDamper: 0.12,
+  cancelOnTouch: true
+};
+
+butter.init(options);
 
 // Hamburger Menu
 

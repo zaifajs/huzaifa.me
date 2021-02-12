@@ -40,6 +40,8 @@ body {
   font-weight: 400;
   color: $color-text;
   line-height: 2.8rem;
+  display: flex;
+  justify-content: center;
 }
 
 input:focus,
