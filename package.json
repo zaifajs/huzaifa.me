@@ -17,6 +17,10 @@
     "gsap": "^2.0.2"
   },
   "scripts": {
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
   }
 }

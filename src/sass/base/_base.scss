@@ -47,8 +47,13 @@ body {
 input:focus,
 textarea:focus,
 button:focus {
-  //outline: 0 solid;
   text-decoration: none;
+}
+
+.using-mouse {
+  * {
+    outline: 0 solid;
+  }
 }
 
 img {
