@@ -1,75 +1,78 @@
-var gulp = require('gulp'),
-	imagemin = require('gulp-imagemin'),
-	uglify = require('gulp-uglify-es').default,
-	sass = require('gulp-sass'),
-	concat = require('gulp-concat'),
-	fontmin = require('gulp-fontmin'),
-	browserSync = require('browser-sync');
+const { src, dest, watch, series, parallel } = require('gulp');
+const imagemin = require('gulp-imagemin');
+const uglify = require('gulp-uglify-es').default;
+const sass = require('gulp-sass')(require('sass'));
+const concat = require('gulp-concat');
+const fontmin = require('gulp-fontmin');
+const browserSync = require('browser-sync').create();
 
-// Copy all HTML files
-gulp.task('copyHtml', () =>
-	gulp.src('src/*.html')
-	.pipe(gulp.dest('public'))
-);
+function copyHtml() {
+        return src('src/*.html')
+                .pipe(dest('public'));
+}
 
-// Optimize images
-gulp.task('imageMin', () =>
-	gulp.src('src/img/**/*')
-	.pipe(imagemin())
-	.pipe(gulp.dest('public/img'))
-	.pipe(browserSync.reload({
-		stream: true
-	}))
-);
+function imageMin() {
+        return src('src/img/**/*')
+                .pipe(imagemin())
+                .pipe(dest('public/img'));
+}
 
-// Optimize fonts
-gulp.task('fontmin', () =>
-	gulp.src('src/fonts/**')
-	.pipe(fontmin())
-	.pipe(gulp.dest('public/fonts'))
+function fontminTask() {
+        return src('src/fonts/**')
+                .pipe(fontmin())
+                .pipe(dest('public/fonts'));
+}
 
-);
+function scripts() {
+        return src('src/js/**/*.js')
+                .pipe(concat('main.js'))
+                .pipe(uglify().on('error', function (e) {
+                        console.log(e.toString());
+                        this.emit('end');
+                }))
+                .pipe(dest('public/js'));
+}
 
-// Scripts (uglify + concat)
-gulp.task('scripts', () =>
-	gulp.src('src/js/**/*.js')
-	.pipe(concat('main.js'))
-	.pipe(uglify())
-	.pipe(uglify().on('error', function (e) {
-		console.log(e);
-	}))
-	.pipe(gulp.dest('public/js'))
-	.pipe(browserSync.reload({
-		stream: true
-	}))
-);
+function sassTask() {
+        return src('src/sass/main.scss')
+                .pipe(sass({
+                        outputStyle: 'compressed'
+                }).on('error', sass.logError))
+                .pipe(dest('public/css'))
+                .pipe(browserSync.stream());
+}
 
-// Compile Sass
-gulp.task('sass', () =>
-	gulp.src('src/sass/main.scss')
-	.pipe(sass().on('error', sass.logError))
-	.pipe(sass({
-		outputStyle: 'compressed'
-	}))
-	.pipe(gulp.dest('public/css'))
-	.pipe(browserSync.reload({
-		stream: true
-	}))
-);
+function reload(done) {
+        browserSync.reload();
+        done();
+}
 
-gulp.task('watch', ['copyHtml', 'imageMin', 'scripts', 'fontmin']);
+function serve(done) {
+        browserSync.init({
+                server: {
+                        baseDir: 'public/'
+                }
+        });
+        done();
+}
 
+function watchFiles() {
+        watch('src/sass/**/*.scss', sassTask);
+        watch('src/js/**/*.js', series(scripts, reload));
+        watch('src/*.html', series(copyHtml, reload));
+        watch('src/img/**/*', series(imageMin, reload));
+        watch('src/fonts/**', series(fontminTask, reload));
+}
 
-gulp.task('browserSync', function () {
-	browserSync.init({
-		server: {
-			baseDir: 'public/'
-		}
-	});
-});
+const build = parallel(copyHtml, imageMin, scripts, fontminTask, sassTask);
 
-gulp.task('dev', ['browserSync', 'watch'], function () {
-	gulp.watch('src/sass/**/*.scss', ['sass']);
-	gulp.watch('src/js/**/*.js', ['scripts']).on('change', browserSync.reload);
-	gulp.watch('src/*.html', ['copyHtml']).on('change', browserSync.reload);
-});
+const dev = series(build, serve, watchFiles);
+
+exports.copyHtml = copyHtml;
+exports.imageMin = imageMin;
+exports.fontmin = fontminTask;
+exports.scripts = scripts;
+exports.sass = sassTask;
+exports.build = build;
+exports.dev = dev;
+exports.default = dev;
