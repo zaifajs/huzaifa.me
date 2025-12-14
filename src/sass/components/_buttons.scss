@@ -21,7 +21,7 @@
     top: 2px;
     left: 2px;
     transition: all 0.2s;
-    color: $color-primary;
+    color: var(--color-primary);
   }
 
   &::before {
@@ -31,10 +31,10 @@
     display: block;
     position: absolute;
     z-index: 999;
-    background: $color-white;
+    background: var(--color-white);
     top: 0;
     left: 0;
-    border: 0.3rem solid $color-light;
+    border: 0.3rem solid var(--color-light);
     transition: all 0.2s;
   }
 
@@ -45,10 +45,10 @@
     display: block;
     position: absolute;
     z-index: 2;
-    background: $color-primary;
+    background: var(--color-primary);
     top: 0.6rem;
     left: 0.6rem;
-    border: 0.3rem solid $color-primary;
+    border: 0.3rem solid var(--color-primary);
   }
 
   &:active {
@@ -60,7 +60,7 @@
     span {
       top: 0.8rem;
       left: 0.8rem;
-      color: $color-primary;
+      color: var(--color-primary);
     }
   }
 }
@@ -72,6 +72,6 @@
   }
 
   &:hover::after {
-    background: $color-primary;
+    background: var(--color-primary);
   }
 }

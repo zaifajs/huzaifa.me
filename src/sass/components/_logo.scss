@@ -3,7 +3,7 @@
     display: inline;
     font-family: "Gilroy", sans-serif;
     font-size: 3.6rem;
-    color: $color-primary;
+    color: var(--color-primary);
     line-height: 5.2rem;
     transition: all 0.7s;
 
@@ -15,7 +15,7 @@
     &:nth-child(2) {
       left: -1.5rem;
       position: relative;
-      color: $color-secondary;
+      color: var(--color-secondary);
       text-shadow: 3px 1px #08080f14;
     }
 
@@ -53,7 +53,7 @@
 
     &:hover:nth-child(3):after {
       max-width: 15rem;
-      color: $color-secondary;
+      color: var(--color-secondary);
     }
   }
 }

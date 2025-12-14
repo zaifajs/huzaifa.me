@@ -24,13 +24,13 @@ h6 {
 a {
   //outline: 0 solid;
   text-decoration: none;
-  color: $color-secondary;
+  color: var(--color-secondary);
 
   &:hover,
   &:focus {
     //outline: 0 solid;
     text-decoration: none;
-    color: $color-secondary;
+    color: var(--color-secondary);
   }
 }
 
@@ -59,7 +59,7 @@ p {
 }
 
 .TextColor--Primary {
-  color: $color-primary;
+  color: var(--color-primary);
 }
 
 .Link--Special {
@@ -73,5 +73,5 @@ p {
 .Link--Special:focus,
 .Link--Special:active {
   text-decoration: underline;
-  color: darken($color-text, 60%);
+  color: var(--color-primary);
 }

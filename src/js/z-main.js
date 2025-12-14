@@ -1,3 +1,36 @@
+/* Theme Toggle Functionality */
+(function() {
+  'use strict';
+
+  const themeToggle = document.querySelector('.Header__ThemeToggle');
+  const html = document.documentElement;
+
+  // Get theme from localStorage or default to light
+  const currentTheme = localStorage.getItem('theme') || 'light';
+
+  // Apply theme on page load
+  if (currentTheme === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+  } else {
+    html.removeAttribute('data-theme');
+  }
+
+  // Theme toggle handler
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function() {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+
+      if (isDark) {
+        html.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  }
+})();
+
 /* const $StickyFooter = document.querySelector('.StickyFooter')
 $Intro = document.querySelector('.Intro')
 IntroHeight = $Intro.offsetHeight;

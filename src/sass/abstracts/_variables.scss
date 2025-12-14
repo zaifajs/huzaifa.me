@@ -4,3 +4,28 @@ $color-tertiary: #00bf00;
 $color-text: #00153a;
 $color-light: #f7f7ff;
 $color-white: #fff;
+
+// CSS Variables for Theme Support
+:root {
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+  --color-tertiary: #{$color-tertiary};
+  --color-text: #{$color-text};
+  --color-light: #{$color-light};
+  --color-white: #{$color-white};
+  --color-background: #{$color-white};
+  --color-surface: #{$color-light};
+  --color-border: #{$color-light};
+}
+
+[data-theme="dark"] {
+  --color-primary: #4a9eff;
+  --color-secondary: #e0e0e0;
+  --color-tertiary: #00ff00;
+  --color-text: #e0e0e0;
+  --color-light: #1a1a2e;
+  --color-white: #0f0f1e;
+  --color-background: #0f0f1e;
+  --color-surface: #1a1a2e;
+  --color-border: #2a2a3e;
+}
