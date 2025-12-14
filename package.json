@@ -19,6 +19,7 @@
   },
   "scripts": {
     "dev": "gulp dev",
+    "build": "gulp build",
     "preinstall": "npx npm-force-resolutions"
   },
   "resolutions": {
